@@ -20,7 +20,7 @@ class List extends React.Component {
     const current = this.props.current
     console.log(data[current])
     const items = data.filter(function (el, index) {
-      return ((data[current].carbon / el.carbon) > 1 && el !== data[current - 1]) && (index % 5 == 0)
+      return ((data[current].carbon > 0 && data[current].carbon / el.carbon > 1) || (data[current].carbon<0 && Math.abs(data[current].carbon / el.carbon) > 1)) && (el !== data[current-1]) && (index % 5 === 0)
     });
 
     const listItems = items.map((item, index) =>
