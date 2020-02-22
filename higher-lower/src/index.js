@@ -118,8 +118,12 @@ class Main extends React.Component {
 
       <div className="container-fluid height-fill position-absolute" style={{ zIndex: "-1" }}>
         <div className="row height-fill ">
-          <div className="col-6 height-fill grad" style={{ filter: "brightness(50%)", backgroundPosition: "center", backgroundImage: "url(" + leftImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize:"cover"}}></div>
-          <div className="col-6 height-fill " style={{ filter: "brightness(50%)", backgroundPosition: "center", backgroundImage: "url(" + rightImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize:"cover"}}></div>
+          <div className="col-6 height-fill grad p-0" style={{ filter: "brightness(50%)"}}>
+            <img src={leftImageSrc} align="middle" style ={{objectFit:"cover", width:"100%", height:"100%"}}/>
+          </div>
+          <div className="col-6 height-fill grad p-0" style={{ filter: "brightness(50%)"}}>
+            <img src={rightImageSrc} align="middle" style ={{objectFit:"cover", width:"100%", height:"100%"}}/>
+          </div>
         </div>
       </div>
 
