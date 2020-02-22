@@ -96,7 +96,14 @@ class Main extends React.Component {
       // NOTE: Check index.
       // Next question but score increases.
       this.setState({ score: this.state.score + 1 });
+      document.getElementById("equv-text").style.color = "green";
+
+    }else{
+      document.getElementById("equv-text").style.color = "red";
     }
+    setTimeout(function() {
+      document.getElementById("equv-text").style.color = "white";
+    }, 1000)
     if (this.state.currentIndex === data.length-1){
       window.location.assign('/completed');
     } else{
@@ -118,10 +125,10 @@ class Main extends React.Component {
 
       <div className="container-fluid height-fill position-absolute" style={{ zIndex: "-1" }}>
         <div className="row height-fill ">
-          <div className="col-6 height-fill grad p-0" style={{ filter: "brightness(50%)"}}>
+          <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)"}}>
             <img src={leftImageSrc} align="middle" style ={{objectFit:"cover", width:"100%", height:"100%"}}/>
           </div>
-          <div className="col-6 height-fill grad p-0" style={{ filter: "brightness(50%)"}}>
+          <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)"}}>
             <img src={rightImageSrc} align="middle" style ={{objectFit:"cover", width:"100%", height:"100%"}}/>
           </div>
         </div>
@@ -138,8 +145,6 @@ class Main extends React.Component {
 
 
           <Choices answerButtonPressed={this.onAnswerButtonClicked} options={this.state.currentOptions} />
-
-
 
 
             <div className="col-5">
