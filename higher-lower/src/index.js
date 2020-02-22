@@ -23,7 +23,7 @@ class List extends React.Component {
   render() {
     const current = this.props.current
     const items = data.filter(function (el) {
-      return ((data[current].carbon / el.carbon) > 1 && el != data[current])
+      return ((data[current].carbon / el.carbon) > 1 && el != data[current-1])
     });
 
     const listItems = items.map((item) =>
@@ -111,7 +111,7 @@ class Main extends React.Component {
           <div className="row height-fill">
 
             <div className="col-2 height-fill" style={{ backgroundColor: "rgba(88, 84, 84, 0.6)" }}>
-              <h5 className="text-white text-center pt-5">These equate to a {data[this.state.currentIndex].name}</h5>
+              <h5 className="text-white text-center pt-5">{data[this.state.currentIndex].name} has the same impact as:</h5>
               <List items={data} current={this.state.currentIndex} />
             </div>
 
