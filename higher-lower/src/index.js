@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './bootstrap.min.css';
 
+
+// import P5Wrapper from 'react-p5-wrapper';
+
 class Item extends React.Component {
   render() {
     return (
@@ -104,6 +107,10 @@ class Main extends React.Component {
     return (
       <div className="main">
 
+        {/* <div className="position-absolute" style={{ zIndex: "1" }} >
+          <P5Wrapper sketch={sketch} />
+        </div> */}
+
         <div className="container-fluid height-fill position-absolute" style={{ zIndex: "-1" }}>
           <div className="row height-fill ">
             <div className="col-6 height-fill " style={{ filter: "grayscale(60%)", backgroundPosition: "center", backgroundImage: "url(" + leftImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}></div>
@@ -138,6 +145,47 @@ const data = [
   { name: "Driving 100 miles", carbon: 40, source: "https://reason.org/commentary/does-bus-transit-reduce-greenhouse/", thumbnail: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", correctIndex: 2, options: [1, 1.25, 1.5] }
 ]
 // ========================================
+
+// function generateGrammar(iterations) {
+//   let functions = ["F[+F]F", "FGF"]
+
+//   let result = "F";
+//   for (let i = 0; i < iterations; i++) {
+//     result = result.split("F").join(functions[Math.floor(Math.random() * functions.length)]);
+//   }
+//   console.log(result)
+// }
+
+// function getPoints() {
+//   let points = []
+//   for (let i = 0; i < 10; i++) {
+
+//   }
+// }
+
+// function sketch(p) {
+//   let rotation = 0;
+
+//   p.setup = function () {
+//     p.createCanvas(600, 400, p.WEBGL);
+//   };
+
+//   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
+//     if (props.rotation) {
+//       rotation = props.rotation * Math.PI / 180;
+//     }
+//   };
+
+//   p.draw = function () {
+//     p.background(100);
+//     p.normalMaterial();
+//     p.noStroke();
+//     p.push();
+//     p.rotateY(rotation);
+//     p.box(100);
+//     p.pop();
+//   };
+// };
 
 ReactDOM.render(
   <Main />,
