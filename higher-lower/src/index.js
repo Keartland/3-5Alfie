@@ -5,7 +5,7 @@ import './bootstrap.min.css';
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
 function commaNumber(num){
- return num.toString().replace( /\B(?=(?:\d{3})+)$/g, "," );
+ return num.toLocaleString();
 }
 
 class ListItem extends React.Component {
