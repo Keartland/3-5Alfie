@@ -6,25 +6,15 @@ import './bootstrap.min.css';
 
 // import P5Wrapper from 'react-p5-wrapper';
 
-class Item extends React.Component {
-  render() {
-    return (
-      <div>
-        <img className="w-100 h-100" src={this.props.thumbnail} alt=""></img>
-        <p>{this.props.name}</p>
-        <a href={this.props.source}>source</a>
-      </div>
-    );
-  }
-}
-
 class ListItem extends React.Component {
   render() {
     const name = this.props.name;
-    const thumbnail = this.props.thumbnail;
     const amount = this.props.amount;
     return (
-      <li className="list-group-item bg-transparent text-white">{Math.round((data[this.props.current].carbon / amount) * 10000) / 10000} x {name}</li>
+      <div>
+        <h3>{name}</h3>
+        <li className="list-group-item bg-transparent text-white">{Math.round((data[this.props.current].carbon / amount) * 100) / 100}</li>
+      </div>
     );
   }
 }
@@ -32,12 +22,11 @@ class ListItem extends React.Component {
 class List extends React.Component {
   render() {
     const current = this.props.current
-
-    const items = this.props.items.filter(function (el) {
-      return (data[current].carbon / el.carbon) > 1
+    const items = data.filter(function (el) {
+      return ((data[current].carbon / el.carbon) > 1 && el != data[current])
     });
 
-    const listItems = data.map((item) =>
+    const listItems = items.map((item) =>
       <li key={item.name}>
         <ListItem current={this.props.current} name={item.name} thumbnail={item.thumbnail} amount={item.carbon} />
       </li>
@@ -45,7 +34,7 @@ class List extends React.Component {
     return (
       <ul className="list-group list-group-flush bg-transparent pt-4" style={{ listStyleType: "none" }}>
         <li>{listItems}</li>
-      </ul >
+      </ul>
     );
   }
 }
@@ -53,7 +42,7 @@ class List extends React.Component {
 class Choice extends React.Component {
   render() {
     return (
-      <a className="btn shadow-none" onClick={() => this.props.answerButtonPressed(this.props.index)}> {this.props.option} times</ a>
+      <a className="btn shadow-none" onClick={() => this.props.answerButtonPressed(this.props.index)}> {this.props.option} times</a>
     )
   }
 }
@@ -130,7 +119,7 @@ class Main extends React.Component {
 
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }
