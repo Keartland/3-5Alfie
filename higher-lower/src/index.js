@@ -10,9 +10,7 @@ class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
     return (
-      <div>
         <li className="list-group-item bg-transparent text-white">{this.props.left} {this.props.number*Math.round((data[this.props.current].carbon / amount) * 100) / 100} {this.props.right}</li>
-      </div>
     );
   }
 }
@@ -26,13 +24,11 @@ class List extends React.Component {
     });
 
     const listItems = items.map((item,index) =>
-    <li key={index}>
       <ListItem current={this.props.current} left={item.left} number={item.number} right={item.right} thumbnail={item.thumbnail} amount={item.carbon} />
-    </li>
   );
   return (
-    <ul className="list-group list-group-flush bg-transparent pt-4" style={{ listStyleType: "none" }}>
-      <li>{listItems}</li>
+    <ul className=" list-group list-group-horizontal list-group-flush bg-transparent pt-4" style={{ listStyleType: "none" }}>
+      {listItems}
     </ul>
   );
 }
@@ -107,27 +103,33 @@ class Main extends React.Component {
         </div>
 
       <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1" }}>
-        <div className="row height-fill">
+        <div className="row height-top-part">
 
-          <div className="col-2 height-fill" style={{ backgroundColor: "rgba(88, 84, 84, 0.6)" }}>
-            <h5 className="text-white text-center pt-5">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
-            <List items={data} current={this.state.currentIndex} />
-          </div>
-
-            <div className="col-3 height-fill">
-            {data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}
+            <div className="col-5">
+              <div className="vertical-centre text-center">
+                <h4 className="text-center w-100 context-text">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}</h4>
+              </div>
             </div>
 
 
             <Choices answerButtonPressed={this.onAnswerButtonClicked} options={this.state.currentOptions} />
 
 
-            <div className="col-5 height-fill">
-            {data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}
+            <div className="col-5">
+            <div className="vertical-centre text-center">
+            <h4 className = "context-text">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}</h4>
+            </div>
+            </div>
+
+            </div>
+            <div className="row height-bottem-part">
+            <div className="col-12" style={{ backgroundColor: "rgba(88, 84, 84, 0.6)" }}>
+              <h5 className="text-white text-center pt-5">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
+              <List items={data} current={this.state.currentIndex} />
+            </div>
             </div>
 
 
-          </div>
         </div>
       </div>
   );

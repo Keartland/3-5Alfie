@@ -1,9 +1,18 @@
 body, html {
   height: 100%;
+  text-transform: uppercase;
 }
 
 .height-fill {
   height: 100% !important;
+}
+
+.height-top-part {
+  height: 80%;
+}
+
+.height-bottem-part {
+  height: 20%;
 }
 
 .vertical-centre {
@@ -50,4 +59,10 @@ body, html {
   color: #ffffff;
   background-color: #f3cd50;
   border: 1px solid #f3cd50;
+}
+
+.context-text {
+color: #f7c84c;
+font-weight: 700 !important;
+font-size: 50px;
 }
