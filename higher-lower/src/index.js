@@ -4,8 +4,6 @@ import './index.css';
 import './bootstrap.min.css';
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
-// import P5Wrapper from 'react-p5-wrapper';
-
 class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
@@ -201,48 +199,6 @@ const data = [
 {left:"every",number:1,right:"teamtrees",carbon:-217235410,source:"https://teamtrees.org/",thumbnail:"https://teamtrees.org/images/social-share-earth-astronaut-1-9x1.png",answer:57.2},
 {left:"absorbed by",number:1,right:"amazon rainforest per year",carbon:-1995806428000,source:"https://www.livescience.com/44235-amazon-rainforest-carbon-cycle-measured.html",thumbnail:"https://images.unsplash.com/photo-1579571157206-351f50eb3046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80",answer:9187.3}
 ]
-// ========================================
-
-// function generateGrammar(iterations) {
-//   let functions = ["F[+F]F", "FGF"]
-
-//   let result = "F";
-//   for (let i = 0; i < iterations; i++) {
-//     result = result.split("F").join(functions[Math.floor(Math.random() * functions.length)]);
-//   }
-//   console.log(result)
-// }
-
-// function getPoints() {
-//   let points = []
-//   for (let i = 0; i < 10; i++) {
-
-//   }
-// }
-
-// function sketch(p) {
-//   let rotation = 0;
-
-//   p.setup = function () {
-//     p.createCanvas(600, 400, p.WEBGL);
-//   };
-
-//   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-//     if (props.rotation) {
-//       rotation = props.rotation * Math.PI / 180;
-//     }
-//   };
-
-//   p.draw = function () {
-//     p.background(100);
-//     p.normalMaterial();
-//     p.noStroke();
-//     p.push();
-//     p.rotateY(rotation);
-//     p.box(100);
-//     p.pop();
-//   };
-// };
 
 ReactDOM.render(
   <Main />,
