@@ -4,7 +4,6 @@ import './index.css';
 import './bootstrap.min.css';
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
-// import P5Wrapper from 'react-p5-wrapper';
 
 class ListItem extends React.Component {
   render() {
@@ -105,13 +104,11 @@ class Main extends React.Component {
     if (this.state.currentIndex === data.length-1){
       window.location.assign('/completed?s=' + this.state.score + '&' + 't=' + this.state.currentIndex);
     } else {
-      // Next question but score stays the same.
       this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer) });
     }
   }
 
   render() {
-    // NOTE: Index checking needed.
     const leftImageSrc = data[this.state.currentIndex - 1].thumbnail;
     const rightImageSrc = data[this.state.currentIndex].thumbnail;
     return (
