@@ -12,7 +12,7 @@ class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
     return (
-      <li className=" bg-transparent p-3" style={{ fontSize: "1.7rem", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {commaNumber(this.props.number * Math.round(data[this.props.current].carbon / amount))} {this.props.right}</li>
+      <li className=" bg-transparent p-3" style={{ fontSize: "1.7rem", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {commaNumber(Math.round(this.props.number*data[this.props.current].carbon / amount))} {this.props.right}</li>
     );
   }
 }
@@ -20,7 +20,6 @@ class ListItem extends React.Component {
 class List extends React.Component {
   render() {
     const current = this.props.current
-    console.log(data[current])
     const items = data.filter(function (el, index) {
       return ((data[current].carbon > 0 && data[current].carbon / el.carbon > 1) || (data[current].carbon<0 && Math.abs(data[current].carbon / el.carbon) > 1)) && (el !== data[current-1]) && (index % 5 === 0)
     });
