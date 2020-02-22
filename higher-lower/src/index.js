@@ -103,7 +103,7 @@ class Main extends React.Component {
       document.getElementById("equv-text").style.color = "white";
     }, 700)
     if (this.state.currentIndex === data.length-1){
-      window.location.assign('/completed?s=' + this.state.score);
+      window.location.assign('/completed?s=' + this.state.score + '&' + 't=' + this.state.currentIndex);
     } else {
       // Next question but score stays the same.
       this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer) });
