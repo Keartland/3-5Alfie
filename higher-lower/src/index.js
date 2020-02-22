@@ -10,7 +10,7 @@ class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
     return (
-        <li className=" bg-transparent p-2" style={{minWidth: "300px", float:"left", color:"#f7c84c", fontWeight:"600"}}>{this.props.left} {this.props.number*Math.round((data[this.props.current].carbon / amount) * 100) / 100} {this.props.right}</li>
+        <li className=" bg-transparent p-3" style={{fontSize:"1.7rem", minWidth: "300px", float:"left", color:"#f7c84c", fontWeight:"600"}}>{this.props.left} {this.props.number*Math.round((data[this.props.current].carbon / amount) * 100) / 100} {this.props.right}</li>
     );
   }
 }
@@ -45,7 +45,7 @@ class Choice extends React.Component {
 class Choices extends React.Component {
   render() {
     const listItems = this.props.options.map((currentValue, index) =>
-    <div className="row py-5" >
+    <div className="row py-3" >
       <div className="col-12">
         <Choice answerButtonPressed={this.props.answerButtonPressed} option={currentValue} index={index} />
       </div>
@@ -148,11 +148,16 @@ class Main extends React.Component {
 
             <div className="row height-bottem-part">
             <div className="col-12" style={{ backgroundColor: "rgba(117, 117, 117, 0.20)" }}>
-              <h5 className="text-white text-center pt-5 font-weight-bold">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
+              <h5 className="text-white text-center pt-5 font-weight-bold" style={{fontSize:"1.7rem"}}>{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
               <List items={data} current={this.state.currentIndex} />
             </div>
             </div>
             </div>
+
+            <div style={{zIndex:"3"}}>
+              <h2 className = "text-right text-white p-3">Score: {this.state.score}</h2>
+            </div>
+
         </div>
   );
 }
