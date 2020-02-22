@@ -91,8 +91,6 @@ class Main extends React.Component {
     const correctAnswer = data[this.state.currentIndex].answer;
 
     if (this.state.currentOptions[index] === correctAnswer) {
-      // NOTE: Check index.
-      // Next question but score increases.
       this.setState({ score: this.state.score + 1 });
       document.getElementById("equv-text").style.color = "green";
     } else {
