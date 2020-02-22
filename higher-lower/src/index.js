@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './bootstrap.min.css';
-import { CSSTransitionGroup } from 'react-transition-group' // ES6
+import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
 // import P5Wrapper from 'react-p5-wrapper';
 
@@ -104,7 +104,7 @@ class Main extends React.Component {
       document.getElementById("equv-text").style.color = "white";
     }, 700)
     if (this.state.currentIndex === data.length-1){
-      window.location.assign('/completed');
+      window.location.assign('/completed?s=' + this.state.score);
     } else {
       // Next question but score stays the same.
       this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer) });
