@@ -4,14 +4,7 @@
   margin: auto;
   width: 50%;
   padding: 50px;
-}
-
-.left {
-  text-align: center;
-  color: black;
-  width: 60%;
-  padding: 50px;
-  padding: 0.7em 10em 0em;
+  overflow-x: hidden;
 }
 
 .leftImg{
@@ -26,13 +19,6 @@
   text-align: right;
 }
 
-.right {
-  text-align: center;
-  color: black;
-  padding: 0.7em 65em 0em;
-  padding-right: 100px;
-}
-
 .center{
   padding: 20%;
   text-align: center;
@@ -44,19 +30,14 @@
 }
 
 ul, li{
-  font-size: 2rem;
+  font-size: 40px;
   line-height: 1.5;
   text-align: left;
   list-style-position: inside;
-  padding: 0.7em 0.5em 0em;
+  padding: 0.3em 0.4em 0em;
 
 }
 
-
-.para{
-  text-align: left;
-  padding: 10%;
-}
 
 .padd{
   padding:80px;
@@ -88,75 +69,7 @@ img {
   left: 0px;
   top: 0px;
   z-index: -1;
-  object-fit: fill;
-}
-
-
-.wrapper {
-  /* The height needs to be set to a fixed value for the effect to work.
-   * 100vh is the full height of the viewport. */
-  height: 100vh;
-  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
-  overflow-x: hidden;
-  /* Enable scrolling on the page. */
-  overflow-y: auto;
-  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
-  perspective: 2px;
-}
-
-.section {
-  /* Needed for children to be absolutely positioned relative to the parent. */
-  position: relative;
-  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
-  height: 100vh;
-
-  /* For text formatting. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  text-shadow: 0 0 5px #000;
-}
-
-.parallax::after {
-  /* Display and position the pseudo-element */
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  /* Move the pseudo-element back away from the camera,
-   * then scale it back up to fill the viewport.
-   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
-  transform: translateZ(-1px) scale(1.5);
-  /* Force the background image to fill the whole element. */
-  background-size: 100%;
-  /* Keep the image from overlapping sibling elements. */
-  z-index: -1;
-}
-
-/* The styling for the static div. */
-.static {
-  background: black;
-  height: 60vh;
-  width: 200%;
-  right: 50%;
-}
-
-/* Sets the actual background images to adorable kitties. This part is crucial. */
-.bg1::after {
-  background-image: url('trees.jpg');
-  filter: blur(3px);
-  filter: grayscale(40%);
-  width: 80%;
-  height: 70%;
-  bottom: 100px;
-}
-
-.bg2::after {
-  background-image: url('windmill.jpg');
+  object-fit: contain;
 }
 
 
