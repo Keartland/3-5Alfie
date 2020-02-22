@@ -1,7 +1,47 @@
-img {
-  width:500px;
-  height:500px;
+body, html {
+  height: 100%;
 }
 
-.Choice{
+.height-fill {
+  height: 100% !important;
+}
+
+.vertical-centre {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+}
+
+.centre-centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  border-radius: 300px;
+  font-family: Lato,Helvetica,Arial,sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px !important;
+  padding: 15px 45px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  border: 10px solid #f3cd50;
+}
+
+.btn:hover {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn:active {
+  color: #ffffff;
+  background-color: #f3cd50;
+  border: 1px solid #f3cd50;
 }
