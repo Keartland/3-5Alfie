@@ -95,8 +95,9 @@
 
 
     const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('s');
-    document.getElementById("score").innerHTML = "You scored " + myParam + "/10";
+    const score = urlParams.get('s');
+    const total = urlParams.get('t');
+    document.getElementById("score").innerHTML = "You scored " + score + "/" + total;
 
   </script>
 
