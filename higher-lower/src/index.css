@@ -2,10 +2,6 @@
   display: flex;
 }
 
-.Choice {
-  outline: auto;
-}
-
 .game {
   display: flex;
 }
@@ -13,6 +9,7 @@
 .ListItem {
   outline: auto;
 }
+
 
 .List {
   outline: auto;
