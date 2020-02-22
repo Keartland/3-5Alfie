@@ -17,9 +17,12 @@
   <div class="row">
     <div class="col">
       <div class = "padd"></div>
+      <div class="subText" data-aos="fade-right"><b id="score">You scored 10/12</b></div>
+      <div class = "smallPadd"></div>
       <div class="bigText" data-aos="fade-left">Surprised?</div>
     </div>
   </div>
+
 
 <div class="subText" data-aos="fade-right">The average person produces 10 tonnes of carbon a year, that's enough to fill 24 million balloons.</div>
 </div>
@@ -89,6 +92,12 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('s');
+    document.getElementById("score").innerHTML = "You scored " + myParam + "/10";
+
   </script>
 
 
