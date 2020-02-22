@@ -63,8 +63,7 @@ class Choices extends React.Component {
             {listItems}
           </div>
         </div>
-      </div>
-    </div>);
+      </div>);
   }
 }
 
@@ -106,7 +105,6 @@ class Main extends React.Component {
             <div className="col-6 height-fill " style={{ filter: "brightness(50%)", backgroundPosition: "center", backgroundImage: "url(" + rightImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize:"cover"}}></div>
           </div>
         </div>
-      </div>
 
       <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1" }}>
         <div className="row height-fill">
@@ -132,7 +130,6 @@ class Main extends React.Component {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 }
