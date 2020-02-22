@@ -20,7 +20,7 @@ class List extends React.Component {
     const current = this.props.current
     console.log(data[current])
     const items = data.filter(function (el, index) {
-      return ((data[current].carbon / el.carbon) > 1 && el !== data[current - 1]) && (index % 5 == 0)
+      return ((data[current].carbon > 0 && data[current].carbon / el.carbon > 1) || (data[current].carbon<0 && Math.abs(data[current].carbon / el.carbon) > 1)) && (el !== data[current-1]) && (index % 5 === 0)
     });
 
     const listItems = items.map((item, index) =>
@@ -96,7 +96,6 @@ class Main extends React.Component {
       // Next question but score increases.
       this.setState({ score: this.state.score + 1 });
       document.getElementById("equv-text").style.color = "green";
-
     } else {
       document.getElementById("equv-text").style.color = "red";
     }
@@ -118,12 +117,12 @@ class Main extends React.Component {
     return (
       <div className="main">
 
-        <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1" }}>
+        <div className="container-fluid height-fill position-absolute" style={{ zIndex: "0" }}>
           <div className="row height-fill ">
             <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)" }}>
               <CSSTransitionGroup
                 transitionName="fade"
-                transitionEnterTimeout={500}
+                transitionEnterTimeout={400}
                 transitionLeaveTimeout={300}
                 transitionEnter={true}
                 transitionLeave={true}>
@@ -133,7 +132,7 @@ class Main extends React.Component {
             <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)" }}>
               <CSSTransitionGroup
                 transitionName="fade"
-                transitionEnterTimeout={500}
+                transitionEnterTimeout={400}
                 transitionLeaveTimeout={300}
                 transitionEnter={true}
                 transitionLeave={true}>
@@ -143,7 +142,9 @@ class Main extends React.Component {
           </div>
         </div>
 
-        <div className="container-fluid height-fill position-absolute" style={{ zIndex: "2" }}>
+        <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1", overflow: "hidden" }}>
+
+          <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
 
           <div className="row height-top-part">
 
@@ -160,7 +161,6 @@ class Main extends React.Component {
                 <h4 className="text-center w-100 context-text">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}</h4>
               </div>
             </div>
-
           </div>
 
           <div className="row height-bottem-part">
@@ -169,15 +169,6 @@ class Main extends React.Component {
               <List items={data} current={this.state.currentIndex} />
             </div>
           </div>
-
-          <div style={{ zIndex: "3" }}>
-            <h2 className="text-right text-white p-3" id="scoreTxt">Score: {this.state.score}</h2>
-          </div>
-
-          <div style={{ zIndex: "3" }}>
-            <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
-          </div>
-
         </div>
       </div>
     );
