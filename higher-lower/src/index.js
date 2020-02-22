@@ -4,7 +4,6 @@ import './index.css';
 import './bootstrap.min.css';
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
-
 class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
@@ -170,69 +169,32 @@ class Main extends React.Component {
   }
 }
 
-const data = [{ left: "making", number: 1, right: "plastic straw(s)", carbon: 0.00146, source: "https://www.appropedia.org/HSU_straw_analysis", thumbnail: "https://cdn.pixabay.com/photo/2011/06/17/15/47/straws-8001_960_720.jpg", answer: -1 },
-{ left: "producing", number: 1, right: "latte coffee(s)", carbon: 0.34, source: "https://www.theguardian.com/environment/green-living-blog/2010/jun/17/carbon-footprint-of-tea-coffee", thumbnail: "https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", answer: 232.9 },
-{ left: "producing", number: 1, right: "kg of potatoes", carbon: 2.9, source: "https://www.greeneatz.com/foods-carbon-footprint.html", thumbnail: "https://images.unsplash.com/photo-1563012678-bdfec255931b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80", answer: 8.5 },
-{ left: "using a smartphone for", number: 1, right: "year(s)", carbon: 3, source: "https://www.lovefone.co.uk/blogs/news/how-much-co2-does-it-take-to-make-a-smartphone", thumbnail: "https://images.unsplash.com/photo-1558899460-5bfd4c5f091a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", answer: 1 },
-{ left: "taking a bus for", number: 100, right: "miles", carbon: 6, source: "https://reason.org/commentary/does-bus-transit-reduce-greenhouse/", thumbnail: "https://images.unsplash.com/photo-1520105072000-f44fc083e508?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80", answer: 2 },
-{ left: "producing", number: 1, right: "kg of beef", carbon: 27, source: "https://www.greeneatz.com/foods-carbon-footprint.html", thumbnail: "https://images.unsplash.com/photo-1467217322460-5f03dc33a28e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", answer: 4.5 },
-{ left: "driving", number: 100, right: "miles", carbon: 40, source: "https://reason.org/commentary/does-bus-transit-reduce-greenhouse/", thumbnail: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", answer: 1.5 },
-{ left: "using a dishwasher for", number: 1, right: "year(s)", carbon: 84, source: "https://www.carbonfootprint.com/energyconsumption.html", thumbnail: "https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", answer: 2.1 },
-{ left: "using an electric oven for", number: 1, right: "year(s)", carbon: 91, source: "https://www.carbonfootprint.com/energyconsumption.html", thumbnail: "https://images.unsplash.com/photo-1462392435449-542c64fd805d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", answer: 1.1 },
-{ left: "producing", number: 1, right: "IPhone 11 Pro(s)", carbon: 110, source: "https://www.apple.com/environment/pdf/products/iphone/iPhone_11_Pro_PER_sept2019.pdf", thumbnail: "https://images.unsplash.com/photo-1575695342320-d2d2d2f9b73f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", answer: 1.2 },
-{ left: "using a fridge-freezer for", number: 1, right: "year(s)", carbon: 116, source: "https://www.carbonfootprint.com/energyconsumption.html", thumbnail: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80", answer: 1.1 },
-{ left: "using an electric hob for", number: 1, right: "year(s)", carbon: 129, source: "https://www.carbonfootprint.com/energyconsumption.html", thumbnail: "https://images.unsplash.com/photo-1578845425994-e46a1459566d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", answer: 1.1 },
-{ left: "managing emails for", number: 1, right: "year(s)", carbon: 135, source: "https://ourworld.unu.edu/en/uncovering-the-carbon-footprint-of-everything", thumbnail: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", answer: 1 },
-{ left: "using an electric tumble dryer for", number: 1, right: "year(s)", carbon: 159, source: "https://www.carbonfootprint.com/energyconsumption.html", thumbnail: "https://images.unsplash.com/photo-1581788487364-db375f9ac4c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", answer: 1.2 },
-{ left: "producing", number: 1, right: "new laptop(s)", carbon: 250, source: "https://phys.org/news/2011-04-factory-energy.html", thumbnail: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80", answer: 1.6 },
-{ left: "producing", number: 1, right: "iMac 27\"", carbon: 993, source: "https://www.apple.com/environment/pdf/products/desktops/27-inch_iMac_with_Retina5KDisplay_PER_Mar2019.pdf", thumbnail: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", answer: 4 },
-{ left: "driving a car for", number: 1, right: "year(s)", carbon: 4600, source: "https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle", thumbnail: "https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", answer: 4.6 },
-{ left: "manufacturing of", number: 1, right: "new car(s)", carbon: 20000, source: "https://www.theguardian.com/environment/green-living-blog/2010/sep/23/carbon-footprint-new-car", thumbnail: "https://images.unsplash.com/photo-1543857182-68106299b6b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80", answer: 4.3 },
-{ left: "total consumption of Austria in", number: 1, right: "day(s)", carbon: 197942465, source: "https://en.wikipedia.org/wiki/List_of_countries_by_carbon_dioxide_emissions", thumbnail: "https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", answer: 9897.1 },
-{ left: "total consumption of the UK over", number: 1, right: "year(s)", carbon: 380000000000, source: "https://en.wikipedia.org/wiki/List_of_countries_by_carbon_dioxide_emissions", thumbnail: "https://images.unsplash.com/photo-1560366828-0e5c35b758bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", answer: 1919.7 }
+const data = [
+{left:"making",number:1,right:"plastic straw(s)",carbon:0.00146,source:"https://www.appropedia.org/HSU_straw_analysis",thumbnail:"https://cdn.pixabay.com/photo/2011/06/17/15/47/straws-8001_960_720.jpg",answer:-1},
+{left:"producing",number:1,right:"latte coffee(s)",carbon:0.34,source:"https://www.theguardian.com/environment/green-living-blog/2010/jun/17/carbon-footprint-of-tea-coffee",thumbnail:"https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",answer:232.9},
+{left:"producing",number:1,right:"kg of potatoes",carbon:2.9,source:"https://www.greeneatz.com/foods-carbon-footprint.html",thumbnail:"https://images.unsplash.com/photo-1563012678-bdfec255931b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",answer:8.5},
+{left:"using a smartphone for",number:1,right:"year(s)",carbon:3,source:"https://www.lovefone.co.uk/blogs/news/how-much-co2-does-it-take-to-make-a-smartphone",thumbnail:"https://images.unsplash.com/photo-1558899460-5bfd4c5f091a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:1},
+{left:"taking a bus for",number:100,right:"miles",carbon:6,source:"https://reason.org/commentary/does-bus-transit-reduce-greenhouse/",thumbnail:"https://images.unsplash.com/photo-1520105072000-f44fc083e508?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",answer:2},
+{left:"producing",number:1,right:"kg of beef",carbon:27,source:"https://www.greeneatz.com/foods-carbon-footprint.html",thumbnail:"https://images.unsplash.com/photo-1467217322460-5f03dc33a28e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",answer:4.5},
+{left:"using a dishwasher for",number:1,right:"year(s)",carbon:84,source:"https://www.carbonfootprint.com/energyconsumption.html",thumbnail:"https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",answer:3.1},
+{left:"using an electric oven for",number:1,right:"year(s)",carbon:91,source:"https://www.carbonfootprint.com/energyconsumption.html",thumbnail:"https://images.unsplash.com/photo-1462392435449-542c64fd805d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:1.1},
+{left:"producing",number:1,right:"IPhone 11 Pro(s)",carbon:110,source:"https://www.apple.com/environment/pdf/products/iphone/iPhone_11_Pro_PER_sept2019.pdf",thumbnail:"https://images.unsplash.com/photo-1575695342320-d2d2d2f9b73f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",answer:1.2},
+{left:"using a fridge-freezer for",number:1,right:"year(s)",carbon:116,source:"https://www.carbonfootprint.com/energyconsumption.html",thumbnail:"https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80",answer:1.1},
+{left:"managing emails for",number:1,right:"year(s)",carbon:135,source:"https://ourworld.unu.edu/en/uncovering-the-carbon-footprint-of-everything",thumbnail:"https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:1.2},
+{left:"using an electric tumble dryer for",number:1,right:"year(s)",carbon:159,source:"https://www.carbonfootprint.com/energyconsumption.html",thumbnail:"https://images.unsplash.com/photo-1581788487364-db375f9ac4c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",answer:1.2},
+{left:"flying from london to new york",number:1,right:"time(s)",carbon:590,source:"https://travelnav.com/emissions-from-london-united-kingdom-to-new-york-ny",thumbnail:"https://images.unsplash.com/photo-1573984693612-97c0f6ee4ed8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",answer:3.7},
+{left:"producing",number:1,right:"iMac 27\"",carbon:993,source:"https://www.apple.com/environment/pdf/products/desktops/27-inch_iMac_with_Retina5KDisplay_PER_Mar2019.pdf",thumbnail:"https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:1.7},
+{left:"driving a car for",number:1,right:"year(s)",carbon:4600,source:"https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle",thumbnail:"https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:4.6},
+{left:"total consuption of Texas in",number:1,right:"year(s)",carbon:596383.2,source:"https://www.eia.gov/state/data.php?sid=US",thumbnail:"https://images.unsplash.com/photo-1525814230241-7f78c608c54c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80",answer:129.6},
+{left:"total consumption of Austria in",number:1,right:"day(s)",carbon:197942465,source:"https://en.wikipedia.org/wiki/List_of_countries_by_carbon_dioxide_emissions",thumbnail:"https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",answer:331.9},
+{left:"total consumption of the UK over",number:1,right:"year(s)",carbon:380000000000,source:"https://en.wikipedia.org/wiki/List_of_countries_by_carbon_dioxide_emissions",thumbnail:"https://images.unsplash.com/photo-1560366828-0e5c35b758bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",answer:1919.7},
+{left:"running",number:1,right:"google(s) since 2007",carbon:0.0001,source:"https://www.wired.com/story/how-google-keeps-power-hungry-operations-carbon-neutral/",thumbnail:"https://images.unsplash.com/photo-1573141597928-403fcee0e056?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",answer:0},
+{left:"absorbed by",number:1,right:"pine tree(s)",carbon:-10,source:"https://www.gotreequotes.com/how-much-co2-do-trees-absorb/",thumbnail:"https://images.unsplash.com/photo-1480442646297-37901d5ea815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",answer:-10},
+{left:"absorbed by",number:1,right:"acre of grass",carbon:-417.305,source:"http://www.fort-worth-metropolitan-area.com/nativeplantwildlifegardencom/is-lawn-a-carbon-sink/",thumbnail:"https://images.unsplash.com/photo-1438786657495-640937046d18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:41.7},
+{left:"the only carbon negative country:",number:1,right:"bhutan",carbon:-3800000,source:"https://www.scienceabc.com/social-science/carbon-negative-country.html",thumbnail:"https://images.unsplash.com/photo-1545585521-41880512d0cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",answer:9106},
+{left:"every",number:1,right:"teamtrees",carbon:-217235410,source:"https://teamtrees.org/",thumbnail:"https://teamtrees.org/images/social-share-earth-astronaut-1-9x1.png",answer:57.2},
+{left:"absorbed by",number:1,right:"amazon rainforest per year",carbon:-1995806428000,source:"https://www.livescience.com/44235-amazon-rainforest-carbon-cycle-measured.html",thumbnail:"https://images.unsplash.com/photo-1579571157206-351f50eb3046?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=635&q=80",answer:9187.3}
 ]
-// ========================================
-
-// function generateGrammar(iterations) {
-//   let functions = ["F[+F]F", "FGF"]
-
-//   let result = "F";
-//   for (let i = 0; i < iterations; i++) {
-//     result = result.split("F").join(functions[Math.floor(Math.random() * functions.length)]);
-//   }
-//   console.log(result)
-// }
-
-// function getPoints() {
-//   let points = []
-//   for (let i = 0; i < 10; i++) {
-
-//   }
-// }
-
-// function sketch(p) {
-//   let rotation = 0;
-
-//   p.setup = function () {
-//     p.createCanvas(600, 400, p.WEBGL);
-//   };
-
-//   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-//     if (props.rotation) {
-//       rotation = props.rotation * Math.PI / 180;
-//     }
-//   };
-
-//   p.draw = function () {
-//     p.background(100);
-//     p.normalMaterial();
-//     p.noStroke();
-//     p.push();
-//     p.rotateY(rotation);
-//     p.box(100);
-//     p.pop();
-//   };
-// };
 
 ReactDOM.render(
   <Main />,
