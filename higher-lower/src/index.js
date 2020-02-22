@@ -103,7 +103,7 @@ class Main extends React.Component {
     }
     setTimeout(function() {
       document.getElementById("equv-text").style.color = "white";
-    }, 1000)
+    }, 700)
     if (this.state.currentIndex === data.length-1){
       window.location.assign('/completed');
     } else{
@@ -126,6 +126,7 @@ class Main extends React.Component {
       <div className="container-fluid height-fill position-absolute" style={{ zIndex: "-1" }}>
         <div className="row height-fill ">
           <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)"}}>
+
             <img src={leftImageSrc} align="middle" style ={{objectFit:"cover", width:"100%", height:"100%"}}/>
           </div>
           <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)"}}>
