@@ -14,11 +14,33 @@
   padding: 0.7em 10em 0em;
 }
 
+.leftImg{
+  text-align: center;
+  color: black;
+  padding: 60px;
+
+}
+
+.floatLeft{
+  position:  relative;
+  text-align: right;
+}
+
 .right {
   text-align: center;
   color: black;
   padding: 0.7em 65em 0em;
   padding-right: 100px;
+}
+
+.center{
+  padding: 20%;
+  text-align: center;
+}
+
+.centerButton{
+  padding-left: 40%;
+  text-align: center;
 }
 
 ul, li{
@@ -38,6 +60,10 @@ ul, li{
 
 .padd{
   padding:80px;
+}
+
+.smallPadd{
+  padding:40px;
 }
 
 .bigText{
@@ -62,6 +88,7 @@ img {
   left: 0px;
   top: 0px;
   z-index: -1;
+  object-fit: fill;
 }
 
 
@@ -120,8 +147,11 @@ img {
 
 /* Sets the actual background images to adorable kitties. This part is crucial. */
 .bg1::after {
-  background-image: url('temperatureGraph.gif');
-  width: 100%;
+  background-image: url('trees.jpg');
+  filter: blur(3px);
+  filter: grayscale(40%);
+  width: 80%;
+  height: 70%;
   bottom: 100px;
 }
 
