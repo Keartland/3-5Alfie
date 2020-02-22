@@ -164,7 +164,7 @@ class Main extends React.Component {
             </div>
 
             <div style={{zIndex:"3"}}>
-              <h2 className = "text-right text-white p-3">Score: {this.state.score}</h2>
+              <h2 className = "text-right text-white p-3" id = "scoreTxt">Score: {this.state.score}</h2>
             </div>
 
         </div>
