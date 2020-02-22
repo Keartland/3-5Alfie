@@ -77,7 +77,7 @@ class Main extends React.Component {
 
   generateRandomChoices = (answer) => {
     const options = [0, 0, 0]
-    options[Math.floor(Math.random() * (3))] = answer === 0 ? '0' : answer;
+    options[Math.floor(Math.random() * (3))] = answer === 0 ? 1 : answer;
     const upper = answer === 0 ? (answer - 10000) * 3 : answer * 3
     const lower = answer === 0 ? (answer - 10000) * 0.3 : answer * 0.3
     for (let i = 0; i < options.length; i++) {
