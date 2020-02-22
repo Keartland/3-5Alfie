@@ -1,16 +1,7 @@
-.choices {
-  display: flex;
+img {
+  width:500px;
+  height:500px;
 }
 
-.game {
-  display: flex;
-}
-
-.ListItem {
-  outline: auto;
-}
-
-
-.List {
-  outline: auto;
+.Choice{
 }
