@@ -30,20 +30,23 @@ body, html {
 }
 
 .btn {
+
   border-radius: 600px !important;
   font-family: Lato,Helvetica,Arial,sans-serif;
   letter-spacing: 2px;
-  font-size: 25px !important;
-  padding: 15px 45px;
+  font-size: 50px !important;
+  padding: 50px 50px;
   text-transform: uppercase;
   color: #f7c84c !important;
-  border: 3px solid #ffffff !important;
+  border: 4px solid #ffffff !important;
   font-weight: 700 !important;
+  height: 100px;
+  background-color: rgb(102, 102, 102, 0.2) !important;
 }
 
 .btn:hover {
   color: #ffffff !important;
-  border: 3px solid #ffffff !important;
+  border: 4px solid #ffffff !important;
 }
 
 .btn:active {
