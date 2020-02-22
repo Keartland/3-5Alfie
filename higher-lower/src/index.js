@@ -115,7 +115,7 @@ class Main extends React.Component {
           </div>
 
             <div className="col-3 height-fill">
-            {/* Add left header here */}
+            {data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}
             </div>
 
 
@@ -123,7 +123,7 @@ class Main extends React.Component {
 
 
             <div className="col-5 height-fill">
-            {/* Add right header shit text here */}
+            {data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}
             </div>
 
 
