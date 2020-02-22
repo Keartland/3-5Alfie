@@ -12,7 +12,7 @@ class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
     return (
-      <li className=" bg-transparent p-3" style={{ fontSize: "1.7rem", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {commaNumber(this.props.number * Math.round((data[this.props.current].carbon / amount) * 100) / 100)} {this.props.right}</li>
+      <li className=" bg-transparent p-3" style={{ fontSize: "1.7rem", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {commaNumber(this.props.number * Math.round(data[this.props.current].carbon / amount))} {this.props.right}</li>
     );
   }
 }
