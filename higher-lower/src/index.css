@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   text-transform: uppercase;
+  max-width: 100% !important;
 }
 
 .height-fill {
@@ -8,16 +9,16 @@ body, html {
 }
 
 .height-top-part {
-  height: 80%;
+  height: 70%;
 }
 
 .height-bottem-part {
-  height: 20%;
+  height: 30%;
 }
 
 .vertical-centre {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  min-height: 75%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 75vh; /* These two lines are counted as one :-)       */
 
   display: flex;
   align-items: center;
@@ -65,4 +66,9 @@ body, html {
 color: #f7c84c;
 font-weight: 700 !important;
 font-size: 50px;
+}
+
+#equv-text{
+  font-weight: bold;
+  color: White;
 }

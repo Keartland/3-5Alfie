@@ -10,7 +10,7 @@ class ListItem extends React.Component {
   render() {
     const amount = this.props.amount;
     return (
-        <li className="list-group-item bg-transparent text-white">{this.props.left} {this.props.number*Math.round((data[this.props.current].carbon / amount) * 100) / 100} {this.props.right}</li>
+        <li className=" bg-transparent p-2" style={{minWidth: "300px", float:"left", color:"#f7c84c", fontWeight:"600"}}>{this.props.left} {this.props.number*Math.round((data[this.props.current].carbon / amount) * 100) / 100} {this.props.right}</li>
     );
   }
 }
@@ -19,15 +19,15 @@ class List extends React.Component {
   render() {
     const current = this.props.current
     console.log(data[current])
-    const items = data.filter(function (el) {
-      return ((data[current].carbon / el.carbon) > 1 && el !== data[current-1])
+    const items = data.filter(function (el,index) {
+      return ((data[current].carbon / el.carbon) > 1 && el !== data[current-1]) && (index % 5 == 0)
     });
 
     const listItems = items.map((item,index) =>
       <ListItem current={this.props.current} left={item.left} number={item.number} right={item.right} thumbnail={item.thumbnail} amount={item.carbon} />
   );
   return (
-    <ul className=" list-group list-group-horizontal list-group-flush bg-transparent pt-4" style={{ listStyleType: "none" }}>
+    <ul className=" list-group list-group-horizontal flex-wrap justify-content-center list-group-flush bg-transparent pt-4" style={{ listStyleType: "none" }}>
       {listItems}
     </ul>
   );
@@ -57,6 +57,12 @@ class Choices extends React.Component {
         <div className="vertical-centre">
           <div className="text-center" style={{ margin: "0 auto" }}>
             {listItems}
+            <div className="row py-5" >
+              <div className="col-12">
+                <h1 classname = "text-white text-weight-bold" id="equv-text">Is equivalent to</h1>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>);
@@ -127,6 +133,8 @@ class Main extends React.Component {
             <Choices answerButtonPressed={this.onAnswerButtonClicked} options={this.state.currentOptions} />
 
 
+
+
             <div className="col-5">
             <div className="vertical-centre text-center">
             <h4 className = "context-text">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}</h4>
@@ -135,13 +143,11 @@ class Main extends React.Component {
 
             </div>
             <div className="row height-bottem-part">
-            <div className="col-12" style={{ backgroundColor: "rgba(88, 84, 84, 0.6)" }}>
-              <h5 className="text-white text-center pt-5">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
+            <div className="col-12" style={{ backgroundColor: "rgba(117, 117, 117, 0.20)" }}>
+              <h5 className="text-white text-center pt-5 font-weight-bold">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
               <List items={data} current={this.state.currentIndex} />
             </div>
             </div>
-
-
         </div>
       </div>
   );
