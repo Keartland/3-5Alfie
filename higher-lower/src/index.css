@@ -23,21 +23,27 @@ body, html {
   transform: translate(-50%, -50%);
 }
 
+.grad {
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
 .btn {
-  border-radius: 300px;
+  border-radius: 600px !important;
   font-family: Lato,Helvetica,Arial,sans-serif;
   letter-spacing: 2px;
-  font-size: 20px !important;
+  font-size: 25px !important;
   padding: 15px 45px;
-  font-weight: bold;
   text-transform: uppercase;
-  color: #ffffff !important;
-  border: 10px solid #f3cd50;
+  color: #f7c84c !important;
+  border: 3px solid #ffffff !important;
+  font-weight: 700 !important;
 }
 
 .btn:hover {
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  color: #ffffff !important;
+  border: 3px solid #ffffff !important;
 }
 
 .btn:active {

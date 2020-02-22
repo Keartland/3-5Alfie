@@ -42,7 +42,7 @@ class List extends React.Component {
 class Choice extends React.Component {
   render() {
     return (
-      <a className="btn shadow-none" onClick={() => this.props.answerButtonPressed(this.props.index)}> {this.props.option} times</a>
+      <a className="shadow-none btn" onClick={() => this.props.answerButtonPressed(this.props.index)}> {this.props.option} times</a>
     )
   }
 }
@@ -50,7 +50,7 @@ class Choice extends React.Component {
 class Choices extends React.Component {
   render() {
     const listItems = this.props.options.map((currentValue, index) =>
-      <div className="row py-5" style={{ backgroundColor: "rgba(88, 84, 84, 0.6)" }}>
+      <div className="row py-5" >
         <div className="col-12">
           <Choice answerButtonPressed={this.props.answerButtonPressed} option={currentValue} index={index} />
         </div>
@@ -58,7 +58,7 @@ class Choices extends React.Component {
     );
 
     return (
-      <div className="col-4 height-fill">
+      <div className="col-2 height-fill">
         <div className="vertical-centre">
           <div className="text-center" style={{ margin: "0 auto" }}>
             {listItems}
@@ -102,8 +102,8 @@ class Main extends React.Component {
 
         <div className="container-fluid height-fill position-absolute" style={{ zIndex: "-1" }}>
           <div className="row height-fill ">
-            <div className="col-6 height-fill " style={{ filter: "grayscale(60%)", backgroundPosition: "center", backgroundImage: "url(" + leftImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}></div>
-            <div className="col-6 height-fill " style={{ filter: "grayscale(60%)", backgroundPosition: "center", backgroundImage: "url(" + rightImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}></div>
+            <div className="col-6 height-fill grad" style={{ filter: "brightness(50%)", backgroundPosition: "center", backgroundImage: "url(" + leftImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize:"cover"}}></div>
+            <div className="col-6 height-fill " style={{ filter: "brightness(50%)", backgroundPosition: "center", backgroundImage: "url(" + rightImageSrc + ")", backgroundRepeat: "no-repeat", backgroundSize:"cover"}}></div>
           </div>
         </div>
 
@@ -115,7 +115,18 @@ class Main extends React.Component {
               <List items={data} current={this.state.currentIndex} />
             </div>
 
+            <div className="col-3 height-fill">
+            {/* Add left header here */}
+            </div>
+
+
             <Choices answerButtonPressed={this.onAnswerButtonClicked} options={this.state.currentOptions} />
+
+
+            <div className="col-5 height-fill">
+            {/* Add right header shit text here */}
+            </div>
+
 
           </div>
         </div>
