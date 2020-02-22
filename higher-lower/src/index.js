@@ -97,13 +97,13 @@ class Main extends React.Component {
       this.setState({ score: this.state.score + 1 });
       document.getElementById("equv-text").style.color = "green";
 
-    }else{
+    } else {
       document.getElementById("equv-text").style.color = "red";
     }
-    setTimeout(function() {
+    setTimeout(function () {
       document.getElementById("equv-text").style.color = "white";
     }, 1000)
-    if (this.state.currentIndex === data.length-1){
+    if (this.state.currentIndex === data.length - 1) {
       window.location.assign('/completed');
     } else {
       // Next question but score stays the same.
@@ -117,10 +117,6 @@ class Main extends React.Component {
     const rightImageSrc = data[this.state.currentIndex].thumbnail;
     return (
       <div className="main">
-
-        {/* <div className="position-absolute" style={{ zIndex: "1" }} >
-        <P5Wrapper sketch={sketch} />
-      </div> */}
 
         <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1" }}>
           <div className="row height-fill ">
@@ -174,14 +170,15 @@ class Main extends React.Component {
             </div>
           </div>
 
-            <div style={{zIndex:"3"}}>
-              <h2 className = "text-right text-white p-3" id = "scoreTxt">Score: {this.state.score}</h2>
-            </div>
+          <div style={{ zIndex: "3" }}>
+            <h2 className="text-right text-white p-3" id="scoreTxt">Score: {this.state.score}</h2>
+          </div>
 
-        <div style={{ zIndex: "3" }}>
-          <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
+          <div style={{ zIndex: "3" }}>
+            <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
+          </div>
+
         </div>
-
       </div>
     );
   }
