@@ -53,11 +53,10 @@ body, html {
 }
 
 .btn {
-  border-radius: 25vw !important;
+  border-radius: 30vw !important;
   font-family: Lato,Helvetica,Arial,sans-serif;
   letter-spacing: 0.1vw;
   font-size: 1.3vw !important;
-  padding: 0.4vw 1.2vw;
   text-transform: uppercase;
   color: #f7c84c !important;
   border: 0.3vw solid #ffffff !important;
