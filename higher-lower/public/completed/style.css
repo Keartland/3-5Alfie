@@ -3,14 +3,14 @@
   color: black;
   margin: auto;
 
-  padding: 10px;
+  padding: 0.625rem;
   overflow-x: hidden;
 }
 
 .leftImg{
   text-align: center;
   color: black;
-  padding: 100px;
+  padding: 6.25rem;
 
 }
 
@@ -32,7 +32,7 @@
 }
 
 ul, li{
-  font-size: 40px;
+  font-size: 	2.5rem;
   line-height: 1.5;
   text-align: left;
   list-style-position: inside;
@@ -42,27 +42,27 @@ ul, li{
 
 
 .padd{
-  padding:80px;
+  padding:5rem;
 }
 
 .smallPadd{
-  padding:20px;
+  padding:1.25rem;
 }
 
 .bigText{
-  font-size: 100px;
+  font-size: 6.25rem;
   font-family: 'Vollkorn';
   color: black;
 }
 
 .subText{
-  font-size: 60px;
+  font-size: 3.75rem;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 
 .smallText{
-  font-size: 40px;
+  font-size: 	2.5rem;
   text-align: left;
   padding: 0.2em 2em 0em;
 }
@@ -72,7 +72,8 @@ img {
   left: 0px;
   top: 0px;
   z-index: -1;
-  object-fit: contain;
+  object-fit: fill;
+  height: auto;
 }
 
 hr.yllwLine {
