@@ -19,6 +19,10 @@
   text-align: right;
 }
 
+.floatRight{
+  justify-content: flex-end;
+}
+
 .center{
   padding-left: 20%;
   padding-right: 20%;
@@ -39,7 +43,6 @@ ul, li{
   padding: 0.2em 1.3em 0em;
 
 }
-
 
 .padd{
   padding:5rem;
@@ -67,7 +70,23 @@ ul, li{
   padding: 0.2em 2em 0em;
 }
 
-img {
+.push{
+      margin: auto;
+}
+
+.innerBox {
+  display: flex;
+  flex: auto;
+  flex-direction:column;
+}
+
+.row {
+  display: flex;
+  flex: auto;
+  flex-direction:row;
+}
+
+img.back {
   position: absolute;
   left: 0px;
   top: 0px;
