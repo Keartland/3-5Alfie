@@ -155,6 +155,7 @@ class Main extends React.Component {
                 ) : (
                     <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} x {data[this.state.currentIndex - 1].right}</h4>
                   )}
+                    <h5 className="text-white text-weight-bold" id="equv-text">{data[this.state.currentIndex - 1].number} {data[this.state.currentIndex - 1].right} = {data[this.state.currentIndex - 1].carbon} KG Carbon <a href={data[this.state.currentIndex - 1].source} className="text-white" target="_blank">(source)</a></h5>
               </div>
             </div>
             <div className="col-2 height-fill">
