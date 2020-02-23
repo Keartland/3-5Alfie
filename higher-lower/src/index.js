@@ -80,8 +80,9 @@ class Main extends React.Component {
     const upper = answer === 0 ? (answer - 10000) * 3 : answer + answer * 10 * Math.random()
     const lower = answer === 0 ? (answer - 10000) * 0.3 : 0
     for (let i = 0; i < options.length; i++) {
-      if (options[i] === null) {
-        options[i] = Math.round(10 * (Math.random() * (upper - lower) + lower)) / 10
+      while (options[i] === null) {
+          let r = Math.round(10 * (Math.random() * (upper - lower) + lower)) / 10
+          if(options.indexOf(r) === -1) { options[i] = r; }
       }
     }
     return (options)
@@ -103,7 +104,7 @@ class Main extends React.Component {
       var thong = this;
 
       if (thong.state.currentIndex === data.length - 1) {
-        window.location.assign('/completed?s=' + thong.state.score + '&' + 't=' + thong.state.currentIndex);
+        window.location.assign('/completed?s=' + thong.state.score + '&t=' + thong.state.currentIndex);
       } else {
         thong.setState({ currentIndex: thong.state.currentIndex + 1, answer: data[thong.state.currentIndex + 1].answer, currentOptions: thong.generateRandomChoices(data[thong.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
       }
@@ -123,13 +124,13 @@ class Main extends React.Component {
       document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 0.3vw solid #ffffff !important;");
     }, 1000);
 
-    var thong = this;
+    var thisWrapper = this;
 
     setTimeout(function(){
-      if (thong.state.currentIndex === data.length - 1) {
-        window.location.assign('/completed?s=' + thong.state.score + '&' + 't=' + thong.state.currentIndex);
+      if (thisWrapper.state.currentIndex === data.length - 1) {
+        window.location.assign('/completed?s=' + thisWrapper.state.score + '&t=' + thisWrapper.state.currentIndex);
       } else {
-        thong.setState({ currentIndex: thong.state.currentIndex + 1, answer: data[thong.state.currentIndex + 1].answer, currentOptions: thong.generateRandomChoices(data[thong.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
+        thisWrapper.setState({ currentIndex: thisWrapper.state.currentIndex + 1, answer: data[thisWrapper.state.currentIndex + 1].answer, currentOptions: thisWrapper.generateRandomChoices(data[thisWrapper.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
       }
     }, 1100);
   }
@@ -151,7 +152,7 @@ render() {
               transitionLeaveTimeout={300}
               transitionEnter={true}
               transitionLeave={true}>
-              <img key={leftImageSrc} src={leftImageSrc} align="middle" style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+              <img key={leftImageSrc} alt={leftImageSrc} src={leftImageSrc} align="middle" style={{ objectFit: "cover", width: "100%", height: "100%" }} />
             </CSSTransitionGroup>
           </div>
           <div className="col-6 height-fill p-0" style={{ filter: "brightness(50%)" }}>
@@ -161,7 +162,7 @@ render() {
               transitionLeaveTimeout={300}
               transitionEnter={true}
               transitionLeave={true}>
-              <img key={rightImageSrc} src={rightImageSrc} align="middle" style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+              <img key={rightImageSrc} alt={leftImageSrc} src={rightImageSrc} align="middle" style={{ objectFit: "cover", width: "100%", height: "100%" }} />
             </CSSTransitionGroup>
           </div>
         </div>
@@ -181,7 +182,7 @@ render() {
               ) : (
                 <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} x {data[this.state.currentIndex - 1].right}</h4>
               )}
-              <h5 className="text-white text-weight-bold" id="source">{data[this.state.currentIndex - 1].number} {data[this.state.currentIndex - 1].right} = {data[this.state.currentIndex - 1].carbon} KG Carbon <a href={data[this.state.currentIndex - 1].source} className="text-white" target="_blank">(source)</a></h5>
+              <h5 className="text-white text-weight-bold" id="source">{data[this.state.currentIndex - 1].number} {data[this.state.currentIndex - 1].right} = {data[this.state.currentIndex - 1].carbon} KG Carbon <a href={data[this.state.currentIndex - 1].source} className="text-white" rel="noopener noreferrer" target="_blank">(source)</a></h5>
             </div>
           </div>
           <div className="col-2 height-fill">
