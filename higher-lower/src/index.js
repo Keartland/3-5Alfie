@@ -213,7 +213,7 @@ render() {
 }
 
 const data = [
-  {left:"making",number:1,right:"plastic straw(s)",carbon:0.00146,source:"https://www.appropedia.org/HSU_straw_analysis",thumbnail:"https://cdn.pixabay.com/photo/2011/06/17/15/47/straws-8001_960_720.jpg",answer:-1},
+  {left:"making",number:1,right:"plastic straw(s)",carbon:0.00146,source:"https://www.appropedia.org/HSU_straw_analysis",thumbnail:"https://images.pexels.com/photos/187498/pexels-photo-187498.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",answer:-1},
   {left:"producing",number:1,right:"latte coffee(s)",carbon:0.34,source:"https://www.theguardian.com/environment/green-living-blog/2010/jun/17/carbon-footprint-of-tea-coffee",thumbnail:"https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",answer:232.9},
   {left:"producing",number:1,right:"kg of potatoes",carbon:2.9,source:"https://www.greeneatz.com/foods-carbon-footprint.html",thumbnail:"https://images.unsplash.com/photo-1563012678-bdfec255931b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",answer:8.5},
   {left:"using a smartphone for",number:1,right:"year(s)",carbon:3,source:"https://www.lovefone.co.uk/blogs/news/how-much-co2-does-it-take-to-make-a-smartphone",thumbnail:"https://images.unsplash.com/photo-1558899460-5bfd4c5f091a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",answer:1},
