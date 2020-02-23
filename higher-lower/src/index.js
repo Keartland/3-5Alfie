@@ -144,7 +144,7 @@ class Main extends React.Component {
           <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
           <div className="row height-top-part">
             <div className="col-5 vertical-centre">
-              <div className="text-center">
+              <div className="text-center mx-auto">
                 {data[this.state.currentIndex].carbon < 0 ? (
                   <h1 classname="text-white text-weight-bold" id="equv-text">Carbon absorbed by</h1>
                 ) : (
@@ -159,7 +159,7 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="col-2 height-fill">
-              <div className="vertical-centre">
+              <div className="vertical-centre align-content-center">
                 <div className="text-center" style={{ margin: "0 auto" }}>
                   <h3 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.7rem" }}>Which is x?</h3>
                   <Choices answerButtonPressed={this.onAnswerButtonClicked} answerButtonHover={this.onAnswerButtonHover} answerButtonLeave={this.onAnswerButtonLeave} options={this.state.currentOptions} />
@@ -167,7 +167,7 @@ class Main extends React.Component {
               </div>
             </div >
             <div className="col-5 vertical-centre">
-              <div className="text-center">
+              <div className="text-center mx-auto">
                 <h1 classname="text-white text-weight-bold" id="equv-text">Is equivalent to</h1>
                 <h4 className="text-center w-100 context-text">{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right}</h4>
               </div>
