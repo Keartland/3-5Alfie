@@ -99,16 +99,42 @@ class Main extends React.Component {
     const correctAnswer = data[this.state.currentIndex].answer;
 
     if (this.state.currentOptions[index] === correctAnswer) {
+
+      var thong = this;
+
+      if (thong.state.currentIndex === data.length - 1) {
+        window.location.assign('/completed?s=' + thong.state.score + '&' + 't=' + thong.state.currentIndex);
+      } else {
+        thong.setState({ currentIndex: thong.state.currentIndex + 1, answer: data[thong.state.currentIndex + 1].answer, currentOptions: thong.generateRandomChoices(data[thong.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
+      }
+
       this.setState({ score: this.state.score + 1 });
       document.getElementsByTagName("BODY")[0].setAttribute("style", "background-color: #06d6a0;");// correct
     } else {
       document.getElementsByTagName("BODY")[0].setAttribute("style", "background-color: #ef4747;"); // incorrect
+      for (let step = 0; step < 3; step++) {
+        if (this.state.currentOptions[step] === correctAnswer) {
+          var correctButton = document.getElementsByClassName("btn shadow-none")[step];
+        }
+      }
+      document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 3px solid #ef4747 !important; color:#ef4747 !important;");
+      correctButton.setAttribute("style", "background-color: rgba(5, 214, 158, 0.8);");
+      setTimeout(function(){ correctButton.setAttribute("style", "background-color: transparent;"); 
+      document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 3px solid #ffffff !important;");
+    }, 1000);
+
+      var thong = this;
+
+      setTimeout(function(){
+        if (thong.state.currentIndex === data.length - 1) {
+          window.location.assign('/completed?s=' + thong.state.score + '&' + 't=' + thong.state.currentIndex);
+        } else {
+          thong.setState({ currentIndex: thong.state.currentIndex + 1, answer: data[thong.state.currentIndex + 1].answer, currentOptions: thong.generateRandomChoices(data[thong.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
+        }
+      }, 1100);
     }
-    if (this.state.currentIndex === data.length - 1) {
-      window.location.assign('/completed?s=' + this.state.score + '&' + 't=' + this.state.currentIndex);
-    } else {
-      this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
-    }
+
+    
   }
 
   render() {
