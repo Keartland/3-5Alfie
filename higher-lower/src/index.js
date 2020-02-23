@@ -172,12 +172,12 @@ class Main extends React.Component {
             <div className="col-5 vertical-centre">
               <div className="text-center mx-auto">
                 {data[this.state.currentIndex].carbon < 0 ? (
-                  <h1 classname="text-white text-weight-bold" id="equv-text">Carbon absorbed by</h1>
+                  <h1 classname="text-white text-weight-bold" id="equv-text">The Carbon absorbed by</h1>
                 ) : (
-                    <h1 classname="text-white text-weight-bold" id="equv-text">Carbon produced by</h1>
+                    <h1 classname="text-white text-weight-bold" id="equv-text">The Carbon produced by</h1>
                   )}
                 {this.state.isOverAnswer ? (
-                  <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} {data[this.state.currentIndex].number * this.state.answerOver} {data[this.state.currentIndex - 1].right}</h4>
+                  <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} {data[this.state.currentIndex-1].number*this.state.answerOver} {data[this.state.currentIndex - 1].right}</h4>
                 ) : (
                     <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} x {data[this.state.currentIndex - 1].right}</h4>
                   )}
