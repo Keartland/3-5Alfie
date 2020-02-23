@@ -9,7 +9,7 @@ class ListItem extends React.Component {
   render() {
     const amount = Math.round(this.props.number * data[this.props.current].carbon / this.props.amount).toLocaleString()
     return (
-      <li className=" bg-transparent p-3" style={{ fontSize: "1.7rem", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {amount} {this.props.right}</li>
+      <li className=" bg-transparent p-3" style={{ fontSize: "1.6vw", minWidth: "300px", float: "left", color: "#f7c84c", fontWeight: "600" }}>{this.props.left} {amount} {this.props.right}</li>
     );
   }
 }
@@ -120,7 +120,7 @@ class Main extends React.Component {
       document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 3px solid #ef4747 !important; color:#ef4747 !important;");
       correctButton.setAttribute("style", "background-color: rgba(5, 214, 158, 0.8);");
       setTimeout(function(){ correctButton.setAttribute("style", "background-color: transparent;");
-      document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 3px solid #ffffff !important;");
+      document.getElementsByClassName("btn shadow-none")[index].setAttribute("style", "border: 0.3vw solid #ffffff !important;");
     }, 1000);
 
       var thong = this;
@@ -167,7 +167,7 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="container-fluid height-fill position-absolute" style={{ zIndex: "1", overflow: "hidden" }}>
-          <h2 className="text-right text-white p-3">Score: {this.state.score}</h2>
+          <h2 className="text-right text-white p-3" id="equv-text">Score: {this.state.score}</h2>
           <div className="row height-top-part">
             <div className="col-5 vertical-centre">
               <div className="text-center mx-auto">
@@ -181,13 +181,13 @@ class Main extends React.Component {
                 ) : (
                     <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} x {data[this.state.currentIndex - 1].right}</h4>
                   )}
-                    <h5 className="text-white text-weight-bold" id="equv-text">{data[this.state.currentIndex - 1].number} {data[this.state.currentIndex - 1].right} = {data[this.state.currentIndex - 1].carbon} KG Carbon <a href={data[this.state.currentIndex - 1].source} className="text-white" target="_blank">(source)</a></h5>
+                    <h5 className="text-white text-weight-bold" id="source">{data[this.state.currentIndex - 1].number} {data[this.state.currentIndex - 1].right} = {data[this.state.currentIndex - 1].carbon} KG Carbon <a href={data[this.state.currentIndex - 1].source} className="text-white" target="_blank">(source)</a></h5>
               </div>
             </div>
             <div className="col-2 height-fill">
               <div className="vertical-centre align-content-center">
                 <div className="text-center" style={{ margin: "0 auto" }}>
-                  <h3 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.7rem" }}>Which is x?</h3>
+                  <h3 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.6vw" }}>Which is x?</h3>
                   <Choices answerButtonPressed={this.onAnswerButtonClicked} answerButtonHover={this.onAnswerButtonHover} answerButtonLeave={this.onAnswerButtonLeave} options={this.state.currentOptions} />
                 </div>
               </div>
@@ -201,7 +201,7 @@ class Main extends React.Component {
           </div>
           <div className="row height-bottem-part">
             <div className="col-12" style={{ backgroundColor: "rgba(117, 117, 117, 0.30)" }}>
-              <h5 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.7rem" }}>{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
+              <h5 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.6vw" }}>{data[this.state.currentIndex].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex].right} has the same impact as:</h5>
               <List className="p-0" items={data} current={this.state.currentIndex} />
             </div>
           </div>
