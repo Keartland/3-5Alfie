@@ -19,7 +19,7 @@ class List extends React.Component {
     const maxItems = 5
     const current = this.props.current;
 
-    const inteval = Math.floor(Math.random() * 6);
+    const inteval = Math.floor(Math.random() * (6 - 3)) + 3;
 
     const itemsToDisplay = data.filter(function (el, index) {
       if (Math.ceil(index / inteval) < maxItems) {
@@ -48,7 +48,7 @@ class List extends React.Component {
 class Choice extends React.Component {
   render() {
     return (
-      <button className="btn shadow-none" onClick={() => this.props.answerButtonPressed(this.props.index)}> {this.props.option} Times</button>
+      <button className="btn shadow-none" onClick={() => this.props.answerButtonPressed(this.props.index)} onMouseOver={() => this.props.answerButtonHover(this.props.option)} onMouseLeave={() => this.props.answerButtonLeave()}>{String.fromCharCode(65 + this.props.index)}. {this.props.option}</button>
     )
   }
 }
@@ -58,7 +58,7 @@ class Choices extends React.Component {
     const listItems = this.props.options.map((currentValue, index) =>
       <div className="row py-3" >
         <div className="col-12">
-          <Choice answerButtonPressed={this.props.answerButtonPressed} option={currentValue} index={index} />
+          <Choice answerButtonPressed={this.props.answerButtonPressed} answerButtonHover={this.props.answerButtonHover} answerButtonLeave={this.props.answerButtonLeave} option={currentValue} index={index} />
         </div>
       </div>
     );
@@ -71,22 +71,29 @@ class Choices extends React.Component {
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { score: 0, currentIndex: 1, answer: data[1].answer, currentOptions: this.generateRandomChoices(data[1].answer) };
+    this.state = { score: 0, currentIndex: 1, answer: data[1].answer, currentOptions: this.generateRandomChoices(data[1].answer), isOverAnswer: false, answerOver: null };
   }
 
   generateRandomChoices = (answer) => {
     const options = [null, null, null]
     options[Math.floor(Math.random() * (3))] = answer;
-    const upper = answer === 0 ? (answer - 10000) * 3 : answer * 3
-    const lower = answer === 0 ? (answer - 10000) * 0.3 : answer * 0.3
+    const upper = answer === 0 ? (answer - 10000) * 3 : answer + answer * 10 * Math.random()
+    const lower = answer === 0 ? (answer - 10000) * 0.3 : 0
     for (let i = 0; i < options.length; i++) {
       if (options[i] === null) {
-        options[i] = Math.round(10 * Math.random() * (upper - lower) + lower) / 10
+        options[i] = Math.round(10 * (Math.random() * (upper - lower) + lower)) / 10
       }
     }
     return (options)
   }
 
+  onAnswerButtonHover = (option) => {
+    this.setState({ isOverAnswer: true, answerOver: option });
+  }
+
+  onAnswerButtonLeave = () => {
+    this.setState({ isOverAnswer: false, answerOver: null });
+  }
 
   onAnswerButtonClicked = (index) => {
     const correctAnswer = data[this.state.currentIndex].answer;
@@ -100,7 +107,7 @@ class Main extends React.Component {
     if (this.state.currentIndex === data.length - 1) {
       window.location.assign('/completed?s=' + this.state.score + '&' + 't=' + this.state.currentIndex);
     } else {
-      this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer) });
+      this.setState({ currentIndex: this.state.currentIndex + 1, answer: data[this.state.currentIndex + 1].answer, currentOptions: this.generateRandomChoices(data[this.state.currentIndex + 1].answer), isOverAnswer: false, answerOver: null });
     }
   }
 
@@ -138,14 +145,23 @@ class Main extends React.Component {
           <div className="row height-top-part">
             <div className="col-5 vertical-centre">
               <div className="text-center">
-                <h1 classname="text-white text-weight-bold" id="equv-text">Carbon produced by</h1>
-                <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} {data[this.state.currentIndex].number} {data[this.state.currentIndex - 1].right}</h4>
+                {data[this.state.currentIndex].carbon < 0 ? (
+                  <h1 classname="text-white text-weight-bold" id="equv-text">Carbon absorbed by</h1>
+                ) : (
+                    <h1 classname="text-white text-weight-bold" id="equv-text">Carbon produced by</h1>
+                  )}
+                {this.state.isOverAnswer ? (
+                  <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} {data[this.state.currentIndex].number * this.state.answerOver} {data[this.state.currentIndex - 1].right}</h4>
+                ) : (
+                    <h4 className="text-center w-100 context-text">{data[this.state.currentIndex - 1].left} x {data[this.state.currentIndex - 1].right}</h4>
+                  )}
               </div>
             </div>
             <div className="col-2 height-fill">
               <div className="vertical-centre">
                 <div className="text-center" style={{ margin: "0 auto" }}>
-                  <Choices answerButtonPressed={this.onAnswerButtonClicked} options={this.state.currentOptions} />
+                  <h3 className="text-white text-center pt-2 font-weight-bold" style={{ fontSize: "1.7rem" }}>Which is x?</h3>
+                  <Choices answerButtonPressed={this.onAnswerButtonClicked} answerButtonHover={this.onAnswerButtonHover} answerButtonLeave={this.onAnswerButtonLeave} options={this.state.currentOptions} />
                 </div>
               </div>
             </div >
