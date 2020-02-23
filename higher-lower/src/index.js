@@ -19,7 +19,7 @@ class List extends React.Component {
     const maxItems = 5
     const current = this.props.current;
 
-    const inteval = Math.floor(Math.random() * (6 - 3)) + 3;
+    const inteval = Math.floor(Math.random() * 3) + 3;
 
     const itemsToDisplay = data.filter(function (el, index) {
       if (Math.ceil(index / inteval) < maxItems) {
