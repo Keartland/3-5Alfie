@@ -1,0 +1,93 @@
+body, html {
+  height: 100%;
+  text-transform: uppercase;
+  overflow-y: hidden;
+  max-width: 100% !important;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.height-fill {
+  height: 100% !important;
+}
+
+.height-top-part {
+  height: 70%;
+}
+
+.height-bottem-part {
+  height: 30%;
+}
+
+.vertical-centre {
+  min-height: 75%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 75vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+}
+
+.centre-centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  border-radius: 30vw !important;
+  font-family: Lato,Helvetica,Arial,sans-serif;
+  letter-spacing: 0.1vw;
+  font-size: 1.3vw !important;
+  text-transform: uppercase;
+  color: #f7c84c !important;
+  border: 0.3vw solid #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.btn:hover {
+  color: #ffffff !important;
+  border: 0.3vw solid #ffffff !important;
+  transition: color 1s ease-in-and-out;
+}
+
+.btn:active {
+  color: #ffffff;
+  background-color: #f3cd50;
+  border: 0.3vw  solid #f3cd50;
+}
+
+.context-text {
+  color: #f7c84c;
+  font-weight: 700 !important;
+  font-size: 2.6vw;
+}
+
+#equv-text{
+  font-weight: bold;
+  font-size: 2vw;
+  color: White;
+}
+#source{
+  font-weight: bold;
+  font-size: 1vw;
+  color: White;
+}

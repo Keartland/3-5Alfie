@@ -1,0 +1,100 @@
+.container {
+  text-align: center;
+  color: black;
+  margin: auto;
+
+  padding: 0.625rem;
+  overflow-x: hidden;
+}
+
+.leftImg{
+  text-align: center;
+  color: black;
+  padding: 6.25rem;
+
+}
+
+.floatLeft{
+  position:  relative;
+  text-align: right;
+}
+
+.floatRight{
+  justify-content: flex-end;
+}
+
+.center{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 7%;
+  text-align: center;
+}
+
+.centerButton{
+  padding-left: 40%;
+  text-align: center;
+}
+
+ul, li{
+  font-size: 	2.5rem;
+  line-height: 1.5;
+  text-align: left;
+  list-style-position: inside;
+  padding: 0.2em 1.3em 0em;
+
+}
+
+.padd{
+  padding:5rem;
+}
+
+.smallPadd{
+  padding:1.25rem;
+}
+
+.bigText{
+  font-size: 6.25rem;
+  font-family: 'Vollkorn';
+  color: black;
+}
+
+.subText{
+  font-size: 3.75rem;
+  text-align: center;
+  padding-bottom: 0.625rem;
+}
+
+.smallText{
+  font-size: 	2.5rem;
+  text-align: left;
+  padding: 0.2em 2em 0em;
+}
+
+.push{
+      margin: auto;
+}
+
+.innerBox {
+  display: flex;
+  flex: auto;
+  flex-direction:column;
+}
+
+.row {
+  display: flex;
+  flex: auto;
+  flex-direction:row;
+}
+
+img.back {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  object-fit: fill;
+  height: auto;
+}
+
+hr.yllwLine {
+  border: 3px solid #f3cd50;
+}
